@@ -95,7 +95,7 @@
     <!-- ══════════════════════════════════════════
        HERO SECTION
   ══════════════════════════════════════════ -->
-    <section class="hero">
+    <section class="hero breadcrumb-wrapper">
       <canvas id="bgCanvas"></canvas>
       <div class="vignette"></div>
 
@@ -113,12 +113,7 @@
       </div>
 
       <div class="hero-content">
-        <h1 class="hero-title">Analysing, Planning,<br />Strategy, Result.</h1>
-        <p class="hero-sub">
-          It Has Long Been Established That Readable Content Distracts The
-          Reader From Focusing On The Visual Design Of A Page.
-        </p>
-        <a href="#" class="main-btn btn-white">Book Your Strategy</a>
+        <h1 class="hero-title">about us</h1>
       </div>
 
       <!-- Marquee logos -->
@@ -167,20 +162,48 @@
     </section>
 
     <!-- ══════════════════════════════════════════
-       FEATURE SECTION
+       ABOUT SECTION
   ══════════════════════════════════════════ -->
-    <section class="feature-section">
-      <div class="fs-card col-md-8 mx-auto">
-        <canvas id="featureCanvas"></canvas>
-        <div class="fs-card-content">
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
-          </p>
+    <section class="about-section">
+      <div class="container-fluid">
+        <div class="col-lg-6 col-md-10 col-12 mx-auto text-center">
+          <div class="about-desc fs-4 mb-4">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged.
+            </p>
+          </div>
+          <a href="#" class="main-btn btn-blue">book your strayegy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+      STATISTICS  SECTION
+  ══════════════════════════════════════════ -->
+    <section class="statistics-section text-center">
+      <div class="container-fluid">
+        <div class="row row-cols-lg-4 row-cols-2 g-4">
+          <div class="stat-item">
+            <h3 class="stat-value display-3">500K<span class="suffix">+</span></h3>
+            <p class="stat-label">Ad spend</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="stat-value display-3">40<span class="suffix">+</span></h3>
+            <p class="stat-label">Projects</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="stat-value display-3">200<span class="suffix">M</span></h3>
+            <p class="stat-label">ads reach</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="stat-value display-3">25<span class="suffix">M</span></h3>
+            <p class="stat-label">Revenu</p>
+          </div>
         </div>
       </div>
     </section>
@@ -188,19 +211,20 @@
     <!-- ══════════════════════════════════════════
       SERVICES  SECTION
   ══════════════════════════════════════════ -->
-    <section class="services-section">
+    <!-- •••• note ==> add class grid •••• -->
+    <section class="services-section grid">
       <div class="container-fluid">
         <div class="title col-lg-8 text-center mx-auto">
           <h2 class="secName justify-content-center">Services</h2>
         </div>
-        <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1 g-3 ">
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-3">
           <div class="col">
             <div class="service-card">
               <h3 class="serv-title fs-4">Creative strategies</h3>
               <div class="serv-desc">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
+                industry. Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry.
               </div>
             </div>
           </div>
@@ -219,6 +243,25 @@
               <div class="serv-desc">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum strategies
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="service-card">
+              <h3 class="serv-title fs-4">Creative strategies</h3>
+              <div class="serv-desc">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum strategies
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="service-card">
+              <h3 class="serv-title fs-4">Creative strategies</h3>
+              <div class="serv-desc">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum is simply dummy text of the printing and
+                typesetting industry.
               </div>
             </div>
           </div>
@@ -236,194 +279,121 @@
     </section>
 
     <!-- ══════════════════════════════════════════
-      CASE STUDIES SECTION
+      CASE STUDIES SLIDER SECTION
   ══════════════════════════════════════════ -->
-    <section class="cases-section">
+    <section class="inAbout cases-section">
       <div class="title col-lg-5 text-center mx-auto">
         <h2 class="secName justify-content-center">Case Studies</h2>
-        <p class="secDesc">
-          It has long been established that readable content distracts the
-          reader from focusing on the visual design of a page.
-        </p>
       </div>
 
       <div class="container-fluid">
         <div class="cases-grid">
-          <div class="case-card d-block position-relative h-100">
-            <div class="case-img position-relative">
-              <img class="" src="images/cases.png" alt="case study image" />
-            </div>
-            <div class="case-action">
-              <a
-                href="case.html"
-                class="main-btn btn-white"
-                aria-label="READ MORE"
-                >READ MORE</a
-              >
-            </div>
-          </div>
-          <div class="case-card d-block position-relative h-100">
-            <div class="case-img position-relative">
-              <img class="" src="images/cases.png" alt="case study image" />
-            </div>
-            <div class="case-action">
-              <a
-                href="case.html"
-                class="main-btn btn-white"
-                aria-label="READ MORE"
-                >READ MORE</a
-              >
-            </div>
-          </div>
-          <div class="case-card d-block position-relative h-100">
-            <div class="case-img position-relative">
-              <img class="" src="images/cases.png" alt="case study image" />
-            </div>
-            <div class="case-action">
-              <a
-                href="case.html"
-                class="main-btn btn-white"
-                aria-label="READ MORE"
-                >READ MORE</a
-              >
-            </div>
-          </div>
-          <div class="case-card d-block position-relative h-100">
-            <div class="case-img position-relative">
-              <img class="" src="images/cases.png" alt="case study image" />
-            </div>
-            <div class="case-action">
-              <a
-                href="case.html"
-                class="main-btn btn-white"
-                aria-label="READ MORE"
-                >READ MORE</a
-              >
-            </div>
-          </div>
-          <div class="case-card d-block position-relative h-100">
-            <div class="case-img position-relative">
-              <img class="" src="images/cases.png" alt="case study image" />
-            </div>
-            <div class="case-action">
-              <a
-                href="case.html"
-                class="main-btn btn-white"
-                aria-label="READ MORE"
-                >READ MORE</a
-              >
-            </div>
-          </div>
-          <div class="case-card d-block position-relative h-100">
-            <div class="case-img position-relative">
-              <img class="" src="images/cases.png" alt="case study image" />
-            </div>
-            <div class="case-action">
-              <a
-                href="case.html"
-                class="main-btn btn-white"
-                aria-label="READ MORE"
-                >READ MORE</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="all-cases mt-4 mx-auto text-center">
-          <a href="cases.html" type="submit" class="main-btn btn-blue"
-            >MORE CASE STUDIES</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════
-       CONTACT SECTION
-  ══════════════════════════════════════════ -->
-    <section class="contact-section">
-      <div class="container-fluid">
-        <div class="cs-inner col-lg-6 col-md-9 mx-auto">
-          <div class="title col-lg-9 text-center mx-auto">
-            <h2 class="secName justify-content-center">Contact Us</h2>
-            <p class="secDesc">
-              It has long been established that readable content distracts the
-              reader from focusing on the visual design of a page.
-            </p>
-          </div>
-  
-          <form class="row g-3" onsubmit="return false;">
-            <div class="col-12">
-              <div class="form-group">
-                <label>Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter your name"
-                />
+          <div class="owl-carousel">
+            <div class="case-card d-block position-relative h-100">
+              <div class="case-img position-relative">
+                <img class="" src="images/cases.png" alt="case study image" />
+              </div>
+              <div class="case-action">
+                <a
+                  href="case.html"
+                  class="main-btn btn-white"
+                  aria-label="READ MORE"
+                  >READ MORE</a
+                >
               </div>
             </div>
-  
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Enter your mail"
-                />
+            <div class="case-card d-block position-relative h-100">
+              <div class="case-img position-relative">
+                <img class="" src="images/cases.png" alt="case study image" />
+              </div>
+              <div class="case-action">
+                <a
+                  href="case.html"
+                  class="main-btn btn-white"
+                  aria-label="READ MORE"
+                  >READ MORE</a
+                >
               </div>
             </div>
-  
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Phone Number</label>
-                <input
-                  type="tel"
-                  class="form-control"
-                  placeholder="enter your number"
-                />
+            <div class="case-card d-block position-relative h-100">
+              <div class="case-img position-relative">
+                <img class="" src="images/cases.png" alt="case study image" />
+              </div>
+              <div class="case-action">
+                <a
+                  href="case.html"
+                  class="main-btn btn-white"
+                  aria-label="READ MORE"
+                  >READ MORE</a
+                >
               </div>
             </div>
-  
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>company name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter your company"
-                />
+            <div class="case-card d-block position-relative h-100">
+              <div class="case-img position-relative">
+                <img class="" src="images/cases.png" alt="case study image" />
+              </div>
+              <div class="case-action">
+                <a
+                  href="case.html"
+                  class="main-btn btn-white"
+                  aria-label="READ MORE"
+                  >READ MORE</a
+                >
               </div>
             </div>
-  
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>type</label>
-                <select class="form-control form-select" placeholder="">
-                  <option value="" hidden>Select type</option>
-                  <option value="e-commerce">E-commerce</option>
-                  <option value="service">Service</option>
-                  <option value="other">Other</option>
-                </select>
+            <div class="case-card d-block position-relative h-100">
+              <div class="case-img position-relative">
+                <img class="" src="images/cases.png" alt="case study image" />
+              </div>
+              <div class="case-action">
+                <a
+                  href="case.html"
+                  class="main-btn btn-white"
+                  aria-label="READ MORE"
+                  >READ MORE</a
+                >
               </div>
             </div>
-  
-            <div class="col-12">
-              <div class="form-group">
-                <label>Message</label>
-                <textarea
-                  class="form-control"
-                  placeholder="write message..."
-                ></textarea>
+            <div class="case-card d-block position-relative h-100">
+              <div class="case-img position-relative">
+                <img class="" src="images/cases.png" alt="case study image" />
+              </div>
+              <div class="case-action">
+                <a
+                  href="case.html"
+                  class="main-btn btn-white"
+                  aria-label="READ MORE"
+                  >READ MORE</a
+                >
               </div>
             </div>
-  
-            <div class="col-12">
-              <div class="cs-submit">
-                <button type="submit" class="main-btn btn-blue">SUBMIT</button>
+            <div class="case-card d-block position-relative h-100">
+              <div class="case-img position-relative">
+                <img class="" src="images/cases.png" alt="case study image" />
+              </div>
+              <div class="case-action">
+                <a
+                  href="case.html"
+                  class="main-btn btn-white"
+                  aria-label="READ MORE"
+                  >READ MORE</a
+                >
               </div>
             </div>
-          </form>
+            <div class="case-card d-block position-relative h-100">
+              <div class="case-img position-relative">
+                <img class="" src="images/cases.png" alt="case study image" />
+              </div>
+              <div class="case-action">
+                <a
+                  href="case.html"
+                  class="main-btn btn-white"
+                  aria-label="READ MORE"
+                  >READ MORE</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -431,7 +401,7 @@
     <!-- ══════════════════════════════════════════
        FOOTER
   ══════════════════════════════════════════ -->
-    <footer class="site-footer">
+    <footer class="site-footer pt-0 mt-0">
       <canvas id="footerCanvas"></canvas>
       <div class="footer-vignette"></div>
 

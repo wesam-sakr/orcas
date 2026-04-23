@@ -67,51 +67,62 @@ function resizeCanvas(canvas) {
   canvas.height = canvas.offsetHeight * devicePixelRatio;
 }
 
-/* ── Orb data per section ── */
-const heroScreens = [
-  {
-    orbs: [
-      { x: 356.5, y: 695.5, r: 309.5 },
-      { x: 1106, y: 956, r: 282 },
-      { x: 1453.5, y: 795.5, r: 209.5 },
-      { x: 776.5, y: 859.5, r: 309.5 },
-    ],
-  },
-  {
-    orbs: [
-      { x: 673.5, y: 613.5, r: 309.5 },
-      { x: 911, y: 995, r: 282 },
-      { x: 1297.5, y: 922.5, r: 209.5 },
-      { x: 399.5, y: 922.5, r: 309.5 },
-    ],
-  },
-  {
-    orbs: [
-      { x: 1082.5, y: 486.5, r: 309.5 },
-      { x: 582, y: 988, r: 282 },
-      { x: 983.5, y: 841.5, r: 209.5 },
-      { x: 526.5, y: 586.5, r: 309.5 },
-    ],
-  },
-  {
-    orbs: [
-      { x: 953.5, y: 947.5, r: 309.5 },
-      { x: 563, y: 718, r: 282 },
-      { x: 458.5, y: 1023.5, r: 209.5 },
-      { x: 953.5, y: 511.5, r: 309.5 },
-    ],
-  },
-  {
-    orbs: [
-      { x: 410.5, y: 999.5, r: 309.5 },
-      { x: 477, y: 623, r: 282 },
-      { x: 1088.5, y: 999.5, r: 209.5 },
-      { x: 819.5, y: 821.5, r: 309.5 },
-    ],
-  },
-];
+let featScreens = null;
+let featCanvas = null;
+let featCtx = null;
+let F2_OFFSET = null;
+let heroCanvas = null;
+let heroCtx = null;
 
-const footerScreens = [
+/* ── Orb data per section ── */
+if (document.querySelector(".hero")) {
+  heroScreens = [
+    {
+      orbs: [
+        { x: 356.5, y: 695.5, r: 309.5 },
+        { x: 1106, y: 956, r: 282 },
+        { x: 1453.5, y: 795.5, r: 209.5 },
+        { x: 776.5, y: 859.5, r: 309.5 },
+      ],
+    },
+    {
+      orbs: [
+        { x: 673.5, y: 613.5, r: 309.5 },
+        { x: 911, y: 995, r: 282 },
+        { x: 1297.5, y: 922.5, r: 209.5 },
+        { x: 399.5, y: 922.5, r: 309.5 },
+      ],
+    },
+    {
+      orbs: [
+        { x: 1082.5, y: 486.5, r: 309.5 },
+        { x: 582, y: 988, r: 282 },
+        { x: 983.5, y: 841.5, r: 209.5 },
+        { x: 526.5, y: 586.5, r: 309.5 },
+      ],
+    },
+    {
+      orbs: [
+        { x: 953.5, y: 947.5, r: 309.5 },
+        { x: 563, y: 718, r: 282 },
+        { x: 458.5, y: 1023.5, r: 209.5 },
+        { x: 953.5, y: 511.5, r: 309.5 },
+      ],
+    },
+    {
+      orbs: [
+        { x: 410.5, y: 999.5, r: 309.5 },
+        { x: 477, y: 623, r: 282 },
+        { x: 1088.5, y: 999.5, r: 209.5 },
+        { x: 819.5, y: 821.5, r: 309.5 },
+      ],
+    },
+  ];
+  heroCanvas = document.getElementById("bgCanvas");
+  heroCtx = heroCanvas.getContext("2d");
+}
+
+footerScreens = [
   {
     orbs: [
       { x: 200, y: 600, r: 340 },
@@ -154,67 +165,66 @@ const footerScreens = [
   },
 ];
 
-const featScreens = [
-  {
-    orbs: [
-      { x: 800, y: 900, r: 380 },
-      { x: 200, y: 700, r: 280 },
-      { x: 1300, y: 600, r: 240 },
-      { x: 600, y: 400, r: 300 },
-    ],
-  },
-  {
-    orbs: [
-      { x: 400, y: 600, r: 340 },
-      { x: 1100, y: 800, r: 300 },
-      { x: 300, y: 300, r: 200 },
-      { x: 900, y: 500, r: 350 },
-    ],
-  },
-  {
-    orbs: [
-      { x: 1200, y: 700, r: 360 },
-      { x: 500, y: 900, r: 260 },
-      { x: 800, y: 200, r: 220 },
-      { x: 200, y: 500, r: 320 },
-    ],
-  },
-  {
-    orbs: [
-      { x: 600, y: 800, r: 300 },
-      { x: 1000, y: 400, r: 280 },
-      { x: 400, y: 200, r: 250 },
-      { x: 1200, y: 900, r: 340 },
-    ],
-  },
-  {
-    orbs: [
-      { x: 300, y: 400, r: 350 },
-      { x: 900, y: 700, r: 290 },
-      { x: 1100, y: 300, r: 210 },
-      { x: 500, y: 900, r: 310 },
-    ],
-  },
-];
+if (document.querySelector(".feature-section")) {
+  featScreens = [
+    {
+      orbs: [
+        { x: 800, y: 900, r: 380 },
+        { x: 200, y: 700, r: 280 },
+        { x: 1300, y: 600, r: 240 },
+        { x: 600, y: 400, r: 300 },
+      ],
+    },
+    {
+      orbs: [
+        { x: 400, y: 600, r: 340 },
+        { x: 1100, y: 800, r: 300 },
+        { x: 300, y: 300, r: 200 },
+        { x: 900, y: 500, r: 350 },
+      ],
+    },
+    {
+      orbs: [
+        { x: 1200, y: 700, r: 360 },
+        { x: 500, y: 900, r: 260 },
+        { x: 800, y: 200, r: 220 },
+        { x: 200, y: 500, r: 320 },
+      ],
+    },
+    {
+      orbs: [
+        { x: 600, y: 800, r: 300 },
+        { x: 1000, y: 400, r: 280 },
+        { x: 400, y: 200, r: 250 },
+        { x: 1200, y: 900, r: 340 },
+      ],
+    },
+    {
+      orbs: [
+        { x: 300, y: 400, r: 350 },
+        { x: 900, y: 700, r: 290 },
+        { x: 1100, y: 300, r: 210 },
+        { x: 500, y: 900, r: 310 },
+      ],
+    },
+  ];
+  F2_OFFSET = SCREEN_DUR * 2.7; /* feature time offset  */
+  featCanvas = document.getElementById("featureCanvas");
+  featCtx = featCanvas.getContext("2d");
+}
 
-const F_OFFSET = SCREEN_DUR * 1.5; /* footer time offset   */
-const F2_OFFSET = SCREEN_DUR * 2.7; /* feature time offset  */
+F_OFFSET = SCREEN_DUR * 1.5; /* footer time offset   */
 
 /* ── Canvas setup ── */
-const heroCanvas = document.getElementById("bgCanvas");
-const heroCtx = heroCanvas.getContext("2d");
 
-const fCanvas = document.getElementById("footerCanvas");
-const fCtx = fCanvas.getContext("2d");
-
-const featCanvas = document.getElementById("featureCanvas");
-const featCtx = featCanvas.getContext("2d");
+fCanvas = document.getElementById("footerCanvas");
+fCtx = fCanvas.getContext("2d");
 
 /* Resize all on load + window resize */
 function resizeAll() {
-  resizeCanvas(heroCanvas);
+  if (heroCanvas) resizeCanvas(heroCanvas);
   resizeCanvas(fCanvas);
-  resizeCanvas(featCanvas);
+  if (featCanvas) resizeCanvas(featCanvas);
 }
 resizeAll();
 window.addEventListener("resize", resizeAll);
@@ -226,21 +236,23 @@ function tick(ts) {
   const totalCycle = SCREEN_DUR * NUM_SCREENS;
 
   /* Hero */
-  {
-    const cp = el % totalCycle;
-    const cur = Math.floor(cp / SCREEN_DUR);
-    const nxt = (cur + 1) % NUM_SCREENS;
-    const t = ease((cp % SCREEN_DUR) / SCREEN_DUR);
-    drawBg(
-      heroCtx,
-      heroCanvas.width,
-      heroCanvas.height,
-      heroScreens,
-      cur,
-      nxt,
-      t,
-      0.75,
-    );
+  if (heroCanvas) {
+    {
+      const cp = el % totalCycle;
+      const cur = Math.floor(cp / SCREEN_DUR);
+      const nxt = (cur + 1) % NUM_SCREENS;
+      const t = ease((cp % SCREEN_DUR) / SCREEN_DUR);
+      drawBg(
+        heroCtx,
+        heroCanvas.width,
+        heroCanvas.height,
+        heroScreens,
+        cur,
+        nxt,
+        t,
+        0.75,
+      );
+    }
   }
 
   /* Footer */
@@ -261,8 +273,7 @@ function tick(ts) {
     );
   }
 
-  /* Feature card */
-  {
+  if (featCanvas) {
     const cp = (el + F2_OFFSET) % totalCycle;
     const cur = Math.floor(cp / SCREEN_DUR);
     const nxt = (cur + 1) % NUM_SCREENS;
@@ -278,6 +289,7 @@ function tick(ts) {
       0.85,
     );
   }
+  /* Feature card */
 
   requestAnimationFrame(tick);
 }
@@ -314,7 +326,6 @@ window.addEventListener("scroll", () =>
     .classList.toggle("fixed", window.scrollY > 40),
 );
 
-
 // select input active state
 $("select").each(function () {
   // الحالة الأولية
@@ -325,4 +336,24 @@ $("select").each(function () {
   $(this).on("change", function () {
     $(this).toggleClass("active", !!$(this).val());
   });
+});
+
+// initialize owl carousel for cases section
+$(".cases-grid .owl-carousel").owlCarousel({
+  nav: false,
+  loop: false,
+  // responsiveClass: true,
+  margin: 16,
+  // stagePadding: 40,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    768: {
+      items: 2,
+    },
+    992: {
+      items: 3,
+    },
+  },
 });
