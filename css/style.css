@@ -274,7 +274,7 @@ section {
   margin-block: 0 1rem;
   color: var(--white);
 }
-.site-pagination .page-link .main-btn{
+.site-pagination .page-link .main-btn {
   min-width: 8rem;
   text-align: center;
 }
@@ -1142,6 +1142,20 @@ section {
   text-transform: capitalize;
 }
 
+/* ================================================
+   CONTACT SECTION
+   ================================================ */
+.terms-list ul {
+  list-style: disc;
+  padding-inline-start: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.terms-list li {
+  font-size: 1.25rem;
+}
 
 /* ================================================
    CONTACT SECTION
